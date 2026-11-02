@@ -14,6 +14,13 @@ Sistema de comercio electrónico que los 12 estudiantes construyen entre todos a
 4. Copie `plantilla-servicio/` a `services/<su-servicio>/` y trabaje en una rama `pXX-nombre`.
 5. Valide: `python herramientas/validar_entrega.py <su-servicio>`.
 6. Abra un Pull Request hacia `main`.
+7. Declare el uso de IA generativa (si la utilizó) en el README de su paquete: qué parte y qué verificó.
+
+## Levantar el sistema completo
+
+```
+docker compose up -d
+```
 
 ## Estructura
 
