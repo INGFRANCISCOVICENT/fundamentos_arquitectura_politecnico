@@ -21,8 +21,8 @@ jobs:
           for d in services/*/; do
             [ -d "$d/tests" ] || continue
             echo "== $d"
-            if [ -f "$d/requirements.txt" ]; then
-              pip install -r "$d/requirements.txt"
+            if [ -f "${d}requirements.txt" ]; then
+              pip install -r "${d}requirements.txt"
             fi
             (cd "$d" && python -m pytest -q) || exit 1
           done
