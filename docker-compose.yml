@@ -172,10 +172,10 @@ services:
       PISHOP_SERVICE_NAME: checkout-bff
       PISHOP_HTTP_PORT: "8080"
       # A quien llama durante la compra (por NOMBRE, nunca por IP):
-      PISHOP_CATALOGO_URL: http://catalogo-service:8001       # paso 1: validar producto
-      PISHOP_INVENTARIO_URL: http://inventario-service:8002   # paso 2: reservar stock
-      PISHOP_PEDIDOS_URL: http://pedidos-service:8003         # paso 3: crear pedido
-      PISHOP_PAGOS_URL: http://pagos-service:8004             # paso 4: cobrar
+      PISHOP_CATALOGO_SERVICE_URL: http://catalogo-service:8001       # paso 1: validar producto
+      PISHOP_INVENTARIO_SERVICE_URL: http://inventario-service:8002   # paso 2: reservar stock
+      PISHOP_PEDIDOS_SERVICE_URL: http://pedidos-service:8003         # paso 3: crear pedido
+      PISHOP_PAGOS_SERVICE_URL: http://pagos-service:8004             # paso 4: cobrar
 
   api-publica:                                    # P07: unica puerta desde internet
     <<: *servicio
@@ -186,7 +186,7 @@ services:
       PISHOP_SERVICE_NAME: api-publica
       PISHOP_HTTP_PORT: "8000"
       PISHOP_API_KEY: ${PISHOP_API_KEY:?defina PISHOP_API_KEY en .env}   # llave que deben mandar los clientes, desde el .env
-      PISHOP_CHECKOUT_URL: http://checkout-bff:8080           # las compras se reenvian al checkout
+      PISHOP_CHECKOUT_BFF_URL: http://checkout-bff:8080           # las compras se reenvian al checkout
       PISHOP_CATALOGO_URL: http://catalogo-service:8001       # la lista de productos se pide al catalogo
 
 
