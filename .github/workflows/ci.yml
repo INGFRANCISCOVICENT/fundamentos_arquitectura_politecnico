@@ -29,6 +29,8 @@ jobs:                             # lista de trabajos (aqui solo hay uno)
       - name: Pruebas de la plantilla
         run: cd plantilla-servicio && python -m pytest -q          # la plantilla del profe debe seguir funcionando
 
+      - name: Pruebas de mis herramientas (P12)
+        run: python -m pytest pruebas_p12 -q
       # pytest POR SERVICIO (lo que pide el punto 4).
       # Entra a cada services/<nombre>/ que tenga pruebas, instala sus dependencias
       # y corre sus pruebas. Si uno falla, sigue con los demas y al final dice cuales fallaron.
